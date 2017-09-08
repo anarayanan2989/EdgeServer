@@ -25,7 +25,9 @@ zuul:
       path: /alerts/**
       service-id: alerts-service
       url: http://localhost:9091
-    
+    emulator:
+      path: /emulator/**
+      url: http://localhost:8090
 
 logging:
   level:
