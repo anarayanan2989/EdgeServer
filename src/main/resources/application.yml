@@ -1,0 +1,38 @@
+server:
+  port: 8765
+  
+spring:
+  application:
+    name: Gateway
+    
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: true
+    
+zuul:
+  ignored-services: "*"
+  routes:
+    consumer:
+      path: /consumer/**
+      service-id: consumer-service
+      url: http://localhost:8080
+    metrics:
+      path: /metrics/**
+      service-id: metric-service
+      url: http://localhost:9090
+    alerts:
+      path: /alerts/**
+      service-id: alerts-service
+      url: http://localhost:9091
+    
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    
+    
