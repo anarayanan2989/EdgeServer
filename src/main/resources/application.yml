@@ -20,10 +20,7 @@ zuul:
       path: /consumer/**
       service-id: consumer-service
       url: http://localhost:8080
-    metrics:
-      path: /metrics/**
-      service-id: metric-service
-      url: http://localhost:9090
+    
     alerts:
       path: /alerts/**
       service-id: alerts-service
